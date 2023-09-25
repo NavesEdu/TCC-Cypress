@@ -1,7 +1,7 @@
 name: Cypress tests
 on: push
 jobs:
-  cypress-run:
+  test:
     name: Cypress run
     runs-on: ubuntu-22.04
     steps:
@@ -12,3 +12,8 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           spec: cypress/e2e/spec.cy.js
+      - name: Upload artefatos de teste
+      uses: actions/upload-artifact@v3
+      with:
+        name: relatorio-testes
+        path: TCC-Cypress/cypress/report/

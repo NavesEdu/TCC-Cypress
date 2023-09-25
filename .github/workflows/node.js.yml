@@ -10,6 +10,7 @@ jobs:
 
       - name: Cypress run
         run: |
+          npm i
           npx cypress run
           npm run report:generate
 

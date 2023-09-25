@@ -12,8 +12,7 @@ jobs:
         run: |
           npm i
           npx cypress run
-          npm run report:generate
-
+          npx cypress run --reporter mochawesome
       - name: Upload artefatos de teste
         uses: actions/upload-artifact@v3
         with:

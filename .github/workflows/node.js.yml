@@ -10,7 +10,6 @@ jobs:
 
       - name: Cypress run
         run: |
-          cd TCC-Cypress
           npx cypress run
           npm run report:generate
 

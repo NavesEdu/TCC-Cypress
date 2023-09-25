@@ -8,13 +8,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cypress run
+      - name: Install dependencies and run Cypress
         run: |
           npm i
-          npx cypress run
           npx cypress run --reporter mochawesome
-      - name: Upload artefatos de teste
+          
+      - name: Upload test artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: relatorio-testes
-          path: TCC-Cypress/cypress/report/
+          name: test-reports
+          path: cypress/report

@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "cy:run": "cypress run",
+    "report:cleanup": "rm -fr cypress/report/",
+    "video:cleanup": "rm -fr cypress/videos/",
+    "test:e2e": "cypress run --headless --browser chrome --no-exit",
+    "report:merge": "mochawesome-merge cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json",
+    "report:generate": "marge cypress/report/mochawesome.json --reportDir ./ --inline"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +20,9 @@
     "cypress": "^13.2.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.1.0"
+    "@faker-js/faker": "^8.1.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }

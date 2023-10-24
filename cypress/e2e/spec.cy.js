@@ -80,24 +80,24 @@ describe('Testes automaticos da API ServeRest', () => {
   })
 
   //Quarto
-  // it('Atualizar usuário cadastrado com erro', () => {
-  //   const user = {
-  //     nome: 'Nome do Usuário',
-  //     email: "beltrano@qa.com.br", 
-  //     password: '12345',
-  //     administrador: 'true'
-  //   };
+  it('Atualizar usuário cadastrado com erro', () => {
+    const user = {
+      nome: 'Nome do Usuário',
+      email: "beltrano@qa.com.br", 
+      password: '12345',
+      administrador: 'true'
+    };
   
-  //   cy.request({
-  //     method: 'PUT',
-  //     url: `https://serverest.dev/usuarios/${userId}`,
-  //     body: user,
-  //     failOnStatusCode: false,
-  //   }).should(({ status, body }) => {
-  //     expect(status).to.equal(400); 
-  //     expect(body.message).to.include('Este email já está sendo usado');
-  //   });
-  // });
+    cy.request({
+      method: 'PUT',
+      url: `https://serverest.dev/usuarios/${userId}`,
+      body: user,
+      failOnStatusCode: false,
+    }).should(({ status, body }) => {
+      expect(status).to.equal(400); 
+      expect(body.message).to.include('Este email já está sendo usado');
+    });
+  });
 
   //Quinto
   it('Buscar usuário cadastrado por ID', () => {

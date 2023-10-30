@@ -11,7 +11,8 @@ jobs:
       - name: Install dependencies and run Cypress
         run: |
           npm i
-          npx cypress run --reporter mochawesome
+          npx cypress run
+          npm run report:generate
           
       - name: Upload test artifacts
         uses: actions/upload-artifact@v3

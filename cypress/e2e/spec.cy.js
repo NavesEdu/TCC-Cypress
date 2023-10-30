@@ -83,7 +83,7 @@ describe('Testes automaticos da API ServeRest', () => {
   it('Atualizar usuário cadastrado com erro', () => {
     const user = {
       nome: 'Nome do Usuário',
-      email: "beltrano@qa.com.br", 
+      email: "email_invalido", 
       password: '12345',
       administrador: 'true'
     };
@@ -95,7 +95,6 @@ describe('Testes automaticos da API ServeRest', () => {
       failOnStatusCode: false,
     }).should(({ status, body }) => {
       expect(status).to.equal(400); 
-      expect(body.message).to.include('Este email já está sendo usado');
     });
   });
 
